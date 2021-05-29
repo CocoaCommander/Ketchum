@@ -2,6 +2,34 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>UIAppFonts</key>
+	<array>
+		<string></string>
+	</array>
+	<key>SemiBoldItalic</key>
+	<string>NunitoSans-SemiBoldItalic.ttf</string>
+	<key>SemiBold</key>
+	<string>NunitoSans-SemiBold.ttf</string>
+	<key>Regular</key>
+	<string>NunitoSans-Regular.ttf</string>
+	<key>LightItalic</key>
+	<string>NunitoSans-LightItalic.ttf</string>
+	<key>Light</key>
+	<string>NunitoSans-Light.ttf</string>
+	<key>Italic</key>
+	<string>NunitoSans-Italic.ttf</string>
+	<key>ExtraLightItalic</key>
+	<string>NunitoSans-ExtraLightItalic.ttf</string>
+	<key>ExtraLight</key>
+	<string>NunitoSans-ExtraLight.ttf</string>
+	<key>BoldItalic</key>
+	<string>NunitoSans-BoldItalic.ttf</string>
+	<key>Bold</key>
+	<string>NunitoSans-Bold.ttf</string>
+	<key>BlackItalic</key>
+	<string>NunitoSans-BlackItalic.ttf</string>
+	<key>Black</key>
+	<string>NunitoSans-Black.ttf</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -29,6 +57,8 @@
 	<true/>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>Image Name</key>
+	<string>pokeball</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

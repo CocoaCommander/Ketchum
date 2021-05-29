@@ -11,6 +11,8 @@
 		2D62E139265F043C0007B1B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D62E138265F043C0007B1B7 /* ContentView.swift */; };
 		2D62E13B265F04480007B1B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D62E13A265F04480007B1B7 /* Assets.xcassets */; };
 		2D62E13E265F04480007B1B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D62E13D265F04480007B1B7 /* Preview Assets.xcassets */; };
+		7502E83C2661E499003F6788 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7502E83B2661E499003F6788 /* CardInfo.swift */; };
+		7502E8402661E8F8003F6788 /* Nunito_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 7502E83F2661E8F7003F6788 /* Nunito_Sans */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		2D62E13A265F04480007B1B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D62E13D265F04480007B1B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D62E13F265F04480007B1B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7502E83B2661E499003F6788 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
+		7502E83F2661E8F7003F6788 /* Nunito_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito_Sans; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				2D62E136265F043C0007B1B7 /* KetchumApp.swift */,
 				2D62E138265F043C0007B1B7 /* ContentView.swift */,
+				7502E83F2661E8F7003F6788 /* Nunito_Sans */,
+				7502E83B2661E499003F6788 /* CardInfo.swift */,
 				2D62E13A265F04480007B1B7 /* Assets.xcassets */,
 				2D62E13F265F04480007B1B7 /* Info.plist */,
 				2D62E13C265F04480007B1B7 /* Preview Content */,
@@ -126,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7502E8402661E8F8003F6788 /* Nunito_Sans in Resources */,
 				2D62E13E265F04480007B1B7 /* Preview Assets.xcassets in Resources */,
 				2D62E13B265F04480007B1B7 /* Assets.xcassets in Resources */,
 			);
@@ -139,6 +146,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2D62E139265F043C0007B1B7 /* ContentView.swift in Sources */,
+				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
 				2D62E137265F043C0007B1B7 /* KetchumApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
