@@ -40,7 +40,7 @@ struct ContentView: View {
 }
     
     func animateSplash(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.25) { withAnimation(Animation.easeOut(duration: 1)){
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { withAnimation(Animation.easeOut(duration: 1)){
                 animate.toggle()
             }
         withAnimation(Animation.linear(duration: 0.8)){
