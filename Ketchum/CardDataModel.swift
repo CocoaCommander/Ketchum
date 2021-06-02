@@ -33,12 +33,12 @@ struct Datum: Codable {
     let id, name, supertype: String?
     let subtypes: [Subtype]?
     let hp: String?
-    let types: [RetreatCost]?
+    let types: [Energy]?
     let evolvesFrom: String?
     let rules: [String]?
     let attacks: [Attack]?
     let weaknesses: [Resistance]?
-    let retreatCost: [RetreatCost]?
+    let retreatCost: [Energy]?
     let convertedRetreatCost: Int?
     let datumSet: Set?
     let number, artist, rarity: String?
@@ -67,7 +67,7 @@ import Foundation
 // MARK: - Attack
 struct Attack: Codable {
     let name: String?
-    let cost: [RetreatCost]?
+    let cost: [Energy]?
     let convertedEnergyCost: Int?
     let damage, text: String?
 }
@@ -76,11 +76,19 @@ struct Attack: Codable {
 
 import Foundation
 
-// TODO: Add all the energy types
-enum RetreatCost: String, Codable {
+
+enum Energy: String, Codable {
     case colorless = "Colorless"
+    case darkness = "Darkness"
+    case dragon = "Dragon"
     case fairy = "Fairy"
+    case fighting = "Fighting"
+    case fire = "Fire"
+    case grass = "Grass"
+    case lightning = "Lightning"
+    case metal = "Metal"
     case psychic = "Psychic"
+    case water = "Water"
 }
 
 // Set.swift
@@ -133,9 +141,10 @@ struct Legalities: Codable {
 
 import Foundation
 
-// TODO: Other legalities
+
 enum Expanded: String, Codable {
     case legal = "Legal"
+    case banned = "Banned"
 }
 
 // DatumImages.swift
@@ -163,18 +172,8 @@ import Foundation
 
 // MARK: - Resistance
 struct Resistance: Codable {
-    let type: TypeEnum?
+    let type: Energy?
     let value: String?
-}
-
-// TypeEnum.swift
-
-import Foundation
-
-// TODO: add resistance types
-enum TypeEnum: String, Codable {
-    case darkness = "Darkness"
-    case metal = "Metal"
 }
 
 // Subtype.swift
@@ -183,8 +182,30 @@ import Foundation
 
 // TODO: add all subtypes
 enum Subtype: String, Codable {
+    case brk = "BREAK"
+    case baby = "Baby"
+    case basic = "Basic"
     case ex = "EX"
+    case gx = "GX"
+    case goldenRodGameCorner = "Goldenrod Game Corner"
+    case item = "Item"
+    case legend = "LEGEND"
+    case levelUp = "Level-Up"
     case mega = "MEGA"
+    case pokemonTool = "Pokemon Tool"
+    case pokemonToolF = "Pokemon Tool F"
+    case rapidStrike = "Rapid Strike"
+    case restored = "Restored"
+    case rocketsSecretMachine = "Rocket's Secret Machine"
+    case singleStrike = "Single Strike"
+    case special = "Special"
+    case stadium = "Stadium"
+    case stageOne = "Stage 1"
+    case StageTwo = "Stage 2"
+    case supporter = "Supporter"
+    case tagTeam = "TAG TEAM"
+    case technicalMachine = "Technical Machine"
+    case v = "V"
     case vmax = "VMAX"
 }
 
