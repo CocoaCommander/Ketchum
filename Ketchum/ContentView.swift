@@ -9,45 +9,50 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @State var animate = false
-    @State var endSplash = false
+    
+    @State var index = 0
     
     var body: some View {
-        ZStack {
-            VStack (spacing: 25) {
-                Text("Welcome to")
-                    .font(.custom("ExtraLight", size: 24))
-                    .scaleEffect(animate ? 3 : 1)
-                Image("pokeball")
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: animate ? .fill : .fit)
-                    .frame(width: animate ? nil : 100, height: animate ? nil : 100)
+        
+        VStack{
+            ZStack {
+                if self.index == 0 {
+                    Color.red.edgesIgnoringSafeArea(.top
+                    )
+                    Text("About")
+                        .font(.custom("Bold", size: 30))
+                        .foregroundColor(Color.white)
+                }
+                else if self.index == 1 {
+                    Color.red.edgesIgnoringSafeArea(.top)
+                    Text("Favorite")
+                        .font(.custom("Bold", size: 30))
+                        .foregroundColor(Color.white)
+                }
+                else if self.index == 2 {
+                    Color.red.edgesIgnoringSafeArea(.top)
+                    Text("Search")
+                        .font(.custom("Bold", size: 30))
+                        .foregroundColor(Color.white)
+                }
+                else if self.index == 3 {
+                    Color.red.edgesIgnoringSafeArea(.top)
+                    Text("Compare")
+                        .font(.custom("Bold", size: 30))
+                        .foregroundColor(Color.white)
+                } else{
+                    Color.red.edgesIgnoringSafeArea(.top)
+                    Text("My Deck")
+                        .font(.custom("Bold", size: 30))
+                        .foregroundColor(Color.white)
                     
-                    .scaleEffect(animate ? 3 : 1)
-                    .frame(width: UIScreen.main.bounds.width)
-            
-                Text("Ketchum")
-                    .font(.custom("Bold", size: 30))
-                    .fontWeight(.medium)
-                    .scaleEffect(animate ? 3 : 1)
-                    
+                }
             }
-            .ignoresSafeArea(.all, edges: .all)
-            .onAppear(perform: {animateSplash()})
-            .opacity(endSplash ? 0 : 1)
-        }
-}
-    
-    func animateSplash(){
-        DispatchQueue.main.asyncAfter(deadline: .now() + 3) { withAnimation(Animation.easeOut(duration: 1)){
-                animate.toggle()
-            }
-        withAnimation(Animation.linear(duration: 0.8)){
-                endSplash.toggle()
+            .padding(.bottom, -35)
+            Spacer()
+            Tabs(index: self.$index)
             }
         }
-    }
 }
 
 struct ContentView_Previews: PreviewProvider {
