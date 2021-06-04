@@ -21,11 +21,14 @@ struct CardInfo: View {
                     Divider()
                         Text("Rarity")
                             .font(.custom("Bold", size: 18))
+                            .foregroundColor(Color.red)
                         Text("Rare Ultra")
                             .font(.custom("Italic", size: 12))
                     Divider()
+                    Group{
                         Text("Attacks")
                             .font(.custom("Bold", size: 18))
+                            .foregroundColor(Color.red)
                         Text("Pollen Hazard")
                             .font(.custom("Bold", size: 14))
                         Text("Your opponent's Active Pokemon is now Burned, Confused, and Poisoned.")
@@ -36,10 +39,14 @@ struct CardInfo: View {
                             .font(.custom("Bold", size: 14))
                         Text("Blah blah blah blah")
                             .font(.custom("Italic", size: 12))
-                    
+                    Divider()
+                        Text("Prices")
+                            .font(.custom("Bold", size: 18))
+                            .foregroundColor(Color.red)
                     }
                 }
-                .ignoresSafeArea(.all, edges: .all)
+            }
+            .ignoresSafeArea(.all, edges: .all)
         }
     }
 }
