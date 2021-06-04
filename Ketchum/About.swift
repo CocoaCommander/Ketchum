@@ -8,12 +8,12 @@
 import Foundation
 import SwiftUI
 
-/*struct About: View {
+struct About: View {
     
     var body: some View {
-        Vstack {
+        VStack {
             
         }
         
     }
-} */
+}
