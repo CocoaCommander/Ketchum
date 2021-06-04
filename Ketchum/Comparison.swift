@@ -1,19 +1,22 @@
 //
-//  ComparisonView.swift
+//  Comparison.swift
 //  Ketchum
 //
-//  Created by Justin Lim on 5/26/21.
+//  Created by Justin Lim on 6/3/21.
 //
 
 import SwiftUI
 
-struct ComparisonView: View {
+struct Comparison: View {
+    @State var pokemon1 : Datum
+    @State var pokemon2 : Datum
     var body: some View {
         VStack {
             Text("Comparison")
             HStack {
                 VStack {
-                    //First Pokemon
+                    Text(pokemon1.name!)
+//                    Image(pokemon1.images)
                 }
                 VStack {
                     //Second Pokemon

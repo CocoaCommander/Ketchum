@@ -9,32 +9,30 @@ import SwiftUI
 
 struct CompareSearchView: View {
     @State private var searchQuery = ""
+    @State private var pokemon1 : Datum
+    @State private var pokemon2 : Datum
+    @State private var action : Int? = 0
     var body: some View {
         NavigationView {
             VStack {
-                Text("Ketchum")
+                Text("Ketchum").font(.custom("Bold", size: 20))
                 TextField("Search", text: $searchQuery)
                 HStack {
-                    Text("Selection 1")
-                    Text("Selection 2")
-                    Button("Compare") {
-                        
+                    Text(pokemon1.name!).padding()
+                    Text(pokemon2.name!).padding()
+                    NavigationLink(destination: Comparison(pokemon1: pokemon1, pokemon2: pokemon2), tag: 1, selection: $action){
+                        EmptyView()
+                    }
+                    Text("Compare").onTapGesture {
+                        self.action = 1
                     }
                 }
-//                ScrollView {
-//                    ForEach() {
-//                        ForEach() {
-//                            
-//                        }
-//                    }
-//                }
+                //TODO: Show the searched pokemon and when clicked, add to the pokemon variable.
+                ScrollView {
+                    
+                }
             }
         }
     }
 }
 
-struct CompareSearchView_Previews: PreviewProvider {
-    static var previews: some View {
-        CompareSearchView()
-    }
-}
