@@ -12,7 +12,6 @@ struct ContentView: View {
     @State var index = 0
     
     var body: some View {
-        
         VStack{
             ZStack {
                 if self.index == 0 {
@@ -41,7 +40,6 @@ struct ContentView: View {
                     Text("My Deck")
                         .font(.custom("Bold", size: 30))
                         .foregroundColor(Color.white)
-                    
                 }
                Welcome()
             }

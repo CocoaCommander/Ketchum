@@ -7,29 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D08D4A9266879E7006BD687 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D08D4A8266879E7006BD687 /* HomeView.swift */; };
+		2D08D4AB26688262006BD687 /* HexToUIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D08D4AA26688262006BD687 /* HexToUIColor.swift */; };
+		2D08D4AD26688719006BD687 /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D08D4AC26688719006BD687 /* APICaller.swift */; };
 		2D62E137265F043C0007B1B7 /* KetchumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D62E136265F043C0007B1B7 /* KetchumApp.swift */; };
 		2D62E139265F043C0007B1B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D62E138265F043C0007B1B7 /* ContentView.swift */; };
 		2D62E13B265F04480007B1B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D62E13A265F04480007B1B7 /* Assets.xcassets */; };
 		2D62E13E265F04480007B1B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D62E13D265F04480007B1B7 /* Preview Assets.xcassets */; };
+		2DAAC269266832EC0019D849 /* CardDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAC268266832EC0019D849 /* CardDataModel.swift */; };
+		5E10FE0A26696D83000BE6C1 /* Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10FE0926696D83000BE6C1 /* Comparison.swift */; };
 		7502E83C2661E499003F6788 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7502E83B2661E499003F6788 /* CardInfo.swift */; };
 		7502E8402661E8F8003F6788 /* Nunito_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 7502E83F2661E8F7003F6788 /* Nunito_Sans */; };
-		75BA3BEC2668762100C73D8E /* AnimateSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BEB2668762100C73D8E /* AnimateSplash.swift */; };
 		75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BEE26687E0100C73D8E /* CustomTabs.swift */; };
-		75BA3BF22668821900C73D8E /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BF12668821900C73D8E /* About.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2D08D4A8266879E7006BD687 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		2D08D4AA26688262006BD687 /* HexToUIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexToUIColor.swift; sourceTree = "<group>"; };
+		2D08D4AC26688719006BD687 /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 		2D62E133265F043B0007B1B7 /* Ketchum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ketchum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D62E136265F043C0007B1B7 /* KetchumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KetchumApp.swift; sourceTree = "<group>"; };
 		2D62E138265F043C0007B1B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		2D62E13A265F04480007B1B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D62E13D265F04480007B1B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D62E13F265F04480007B1B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2DAAC268266832EC0019D849 /* CardDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDataModel.swift; sourceTree = "<group>"; };
+		5E10FE0926696D83000BE6C1 /* Comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparison.swift; sourceTree = "<group>"; };
 		7502E83B2661E499003F6788 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		7502E83F2661E8F7003F6788 /* Nunito_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito_Sans; sourceTree = "<group>"; };
-		75BA3BEB2668762100C73D8E /* AnimateSplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateSplash.swift; sourceTree = "<group>"; };
 		75BA3BEE26687E0100C73D8E /* CustomTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabs.swift; sourceTree = "<group>"; };
-		75BA3BF12668821900C73D8E /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,9 +75,13 @@
 				2D62E13A265F04480007B1B7 /* Assets.xcassets */,
 				2D62E13F265F04480007B1B7 /* Info.plist */,
 				2D62E13C265F04480007B1B7 /* Preview Content */,
-				75BA3BEB2668762100C73D8E /* AnimateSplash.swift */,
 				75BA3BEE26687E0100C73D8E /* CustomTabs.swift */,
-				75BA3BF12668821900C73D8E /* About.swift */,
+				2DAAC268266832EC0019D849 /* CardDataModel.swift */,
+				5E10FE0926696D83000BE6C1 /* Comparison.swift */,
+				2DAAC268266832EC0019D849 /* CardDataModel.swift */,
+				2D08D4A8266879E7006BD687 /* HomeView.swift */,
+				2D08D4AA26688262006BD687 /* HexToUIColor.swift */,
+				2D08D4AC26688719006BD687 /* APICaller.swift */,
 			);
 			path = Ketchum;
 			sourceTree = "<group>";
@@ -154,12 +164,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75BA3BEC2668762100C73D8E /* AnimateSplash.swift in Sources */,
-				75BA3BF22668821900C73D8E /* About.swift in Sources */,
 				2D62E139265F043C0007B1B7 /* ContentView.swift in Sources */,
+				2DAAC269266832EC0019D849 /* CardDataModel.swift in Sources */,
 				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
 				75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */,
+				2D08D4AB26688262006BD687 /* HexToUIColor.swift in Sources */,
+				2D08D4AD26688719006BD687 /* APICaller.swift in Sources */,
+				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
+				2D08D4A9266879E7006BD687 /* HomeView.swift in Sources */,
 				2D62E137265F043C0007B1B7 /* KetchumApp.swift in Sources */,
+				5E10FE0A26696D83000BE6C1 /* Comparison.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
