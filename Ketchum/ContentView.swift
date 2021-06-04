@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     
-    
     @State var index = 0
     
     var body: some View {
