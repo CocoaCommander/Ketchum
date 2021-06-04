@@ -16,7 +16,12 @@ struct Welcome: View {
     
     var body: some View {
         ZStack {
-            Color.white
+            Color.white.edgesIgnoringSafeArea(.all)
+            VStack{
+            Text("Welcome to")
+                .font(.custom("ExtraLight", size: 18))
+                .scaleEffect(animate ? 3 : 1)
+                
             Image("pokeball")
                 .resizable()
                 .renderingMode(.original)
@@ -25,6 +30,12 @@ struct Welcome: View {
                 
                 .scaleEffect(animate ? 3 : 1)
                 .frame(width: UIScreen.main.bounds.width)
+                
+            Text("Ketchum")
+                .font(.custom("Bold", size: 24))
+                .scaleEffect(animate ? 3 : 1)
+                
+            }
                 
         }
         .ignoresSafeArea(.all, edges: .all)
@@ -41,6 +52,7 @@ struct Welcome: View {
             }
         }
     }
+    
 }
 
 

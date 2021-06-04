@@ -24,10 +24,7 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                 }
                 else if self.index == 1 {
-                    Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Favorite")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+                    CardInfo()
                 }
                 else if self.index == 2 {
                     Color.red.edgesIgnoringSafeArea(.top)
@@ -47,6 +44,7 @@ struct ContentView: View {
                         .foregroundColor(Color.white)
                     
                 }
+               Welcome()
             }
             .padding(.bottom, -35)
             Spacer()
