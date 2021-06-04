@@ -11,16 +11,14 @@
 		2D62E139265F043C0007B1B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D62E138265F043C0007B1B7 /* ContentView.swift */; };
 		2D62E13B265F04480007B1B7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D62E13A265F04480007B1B7 /* Assets.xcassets */; };
 		2D62E13E265F04480007B1B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2D62E13D265F04480007B1B7 /* Preview Assets.xcassets */; };
-<<<<<<< HEAD
+		2DAAC269266832EC0019D849 /* CardDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DAAC268266832EC0019D849 /* CardDataModel.swift */; };
+		5E10FE0A26696D83000BE6C1 /* Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10FE0926696D83000BE6C1 /* Comparison.swift */; };
 		5E5B0B15265F2F5E005A8534 /* CompareSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B0B14265F2F5E005A8534 /* CompareSearchView.swift */; };
-		5E5B0B17265F4636005A8534 /* ComparisonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E5B0B16265F4636005A8534 /* ComparisonView.swift */; };
-=======
 		7502E83C2661E499003F6788 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7502E83B2661E499003F6788 /* CardInfo.swift */; };
 		7502E8402661E8F8003F6788 /* Nunito_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 7502E83F2661E8F7003F6788 /* Nunito_Sans */; };
 		75BA3BEC2668762100C73D8E /* AnimateSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BEB2668762100C73D8E /* AnimateSplash.swift */; };
 		75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BEE26687E0100C73D8E /* CustomTabs.swift */; };
 		75BA3BF22668821900C73D8E /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BF12668821900C73D8E /* About.swift */; };
->>>>>>> origin/vivian
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,16 +28,14 @@
 		2D62E13A265F04480007B1B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2D62E13D265F04480007B1B7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		2D62E13F265F04480007B1B7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-<<<<<<< HEAD
+		2DAAC268266832EC0019D849 /* CardDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardDataModel.swift; sourceTree = "<group>"; };
+		5E10FE0926696D83000BE6C1 /* Comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparison.swift; sourceTree = "<group>"; };
 		5E5B0B14265F2F5E005A8534 /* CompareSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareSearchView.swift; sourceTree = "<group>"; };
-		5E5B0B16265F4636005A8534 /* ComparisonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComparisonView.swift; sourceTree = "<group>"; };
-=======
 		7502E83B2661E499003F6788 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		7502E83F2661E8F7003F6788 /* Nunito_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito_Sans; sourceTree = "<group>"; };
 		75BA3BEB2668762100C73D8E /* AnimateSplash.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimateSplash.swift; sourceTree = "<group>"; };
 		75BA3BEE26687E0100C73D8E /* CustomTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabs.swift; sourceTree = "<group>"; };
 		75BA3BF12668821900C73D8E /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
->>>>>>> origin/vivian
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,14 +75,12 @@
 				2D62E13A265F04480007B1B7 /* Assets.xcassets */,
 				2D62E13F265F04480007B1B7 /* Info.plist */,
 				2D62E13C265F04480007B1B7 /* Preview Content */,
-<<<<<<< HEAD
 				5E5B0B14265F2F5E005A8534 /* CompareSearchView.swift */,
-				5E5B0B16265F4636005A8534 /* ComparisonView.swift */,
-=======
 				75BA3BEB2668762100C73D8E /* AnimateSplash.swift */,
 				75BA3BEE26687E0100C73D8E /* CustomTabs.swift */,
 				75BA3BF12668821900C73D8E /* About.swift */,
->>>>>>> origin/vivian
+				2DAAC268266832EC0019D849 /* CardDataModel.swift */,
+				5E10FE0926696D83000BE6C1 /* Comparison.swift */,
 			);
 			path = Ketchum;
 			sourceTree = "<group>";
@@ -172,13 +166,11 @@
 				75BA3BEC2668762100C73D8E /* AnimateSplash.swift in Sources */,
 				75BA3BF22668821900C73D8E /* About.swift in Sources */,
 				2D62E139265F043C0007B1B7 /* ContentView.swift in Sources */,
-<<<<<<< HEAD
-				5E5B0B17265F4636005A8534 /* ComparisonView.swift in Sources */,
-=======
+				2DAAC269266832EC0019D849 /* CardDataModel.swift in Sources */,
 				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
 				75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */,
->>>>>>> origin/vivian
 				2D62E137265F043C0007B1B7 /* KetchumApp.swift in Sources */,
+				5E10FE0A26696D83000BE6C1 /* Comparison.swift in Sources */,
 				5E5B0B15265F2F5E005A8534 /* CompareSearchView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
