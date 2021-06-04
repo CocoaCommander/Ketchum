@@ -22,15 +22,15 @@ struct ContentView: View {
                     .resizable()
                     .renderingMode(.original)
                     .aspectRatio(contentMode: animate ? .fill : .fit)
-                    .frame(width: animate ? nil : 100, height: animate ? nil : 100)
+                    .frame(width: animate ? nil : CGFloat(100), height: animate ? nil : CGFloat(100))
                     
-                    .scaleEffect(animate ? 3 : 1)
+                    .scaleEffect(animate ? CGFloat(3) : CGFloat(1))
                     .frame(width: UIScreen.main.bounds.width)
             
                 Text("Ketchum")
                     .font(.custom("Bold", size: 30))
                     .fontWeight(.medium)
-                    .scaleEffect(animate ? 3 : 1)
+                    .scaleEffect(animate ? CGFloat(3) : CGFloat(1))
                     
             }
             .ignoresSafeArea(.all, edges: .all)
