@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftUI
 
 //Empty Datum Object
-private var emptyPokemon : Datum = Datum.init(id: "", name: "hi", supertype: "", subtypes: [], hp: "", types: [], evolvesFrom: "", rules: [], attacks: [], weaknesses: [], retreatCost: [], convertedRetreatCost: 0, datumSet: Set.init(id: "", name: "", series: "", printedTotal: 0, total: 0, legalities: Legalities.init(unlimited: Expanded.init(rawValue: ""), standard: Expanded.init(rawValue: ""), expanded: Expanded.init(rawValue: "")), ptcgoCode: "", releaseDate: "", updatedAt: "", images: SetImages.init(symbol: "", logo: "")), number: "", artist: "", rarity: "", nationalPokedexNumbers: [], legalities: Legalities.init(unlimited: Expanded.init(rawValue: ""), standard: Expanded.init(rawValue: ""), expanded: Expanded.init(rawValue: "")), images: DatumImages.init(small: "", large: ""), tcgplayer: Tcgplayer.init(url: "", updatedAt: "", prices: Prices.init(holofoil: Holofoil.init(low: 0.0, mid: 0.0, high: 0.0, market: 0.0, directLow: 0.0))), resistances: [])
+private var emptyPokemon : Datum = Datum.init(id: "", name: "Select a Pokemon!", supertype: "", subtypes: [], hp: "", types: [], evolvesFrom: "", rules: [], attacks: [], weaknesses: [], retreatCost: [], convertedRetreatCost: 0, datumSet: Set.init(id: "", name: "", series: "", printedTotal: 0, total: 0, legalities: Legalities.init(unlimited: Expanded.init(rawValue: ""), standard: Expanded.init(rawValue: ""), expanded: Expanded.init(rawValue: "")), ptcgoCode: "", releaseDate: "", updatedAt: "", images: SetImages.init(symbol: "", logo: "")), number: "", artist: "", rarity: "", nationalPokedexNumbers: [], legalities: Legalities.init(unlimited: Expanded.init(rawValue: ""), standard: Expanded.init(rawValue: ""), expanded: Expanded.init(rawValue: "")), images: DatumImages.init(small: "", large: ""), tcgplayer: Tcgplayer.init(url: "", updatedAt: "", prices: Prices.init(holofoil: Holofoil.init(low: 0.0, mid: 0.0, high: 0.0, market: 0.0, directLow: 0.0))), resistances: [])
 
 struct CompareSearchView: View {
     //Inital Datum Objects
@@ -35,26 +35,38 @@ struct CompareSearchView: View {
                         .font(.custom("Bold", size: 30))
                         .fontWeight(.medium)
                 }
+                Spacer()
                 
                 SearchBar(searchTerm: searchQuery, loadError: $loadError, cardData: $cardData)
+                
+                Spacer()
+                
                 HStack {
                     Spacer()
-                    Button(action: {
+                    Text(pokemon1.name!).onTapGesture {
                         if pokemon2.id != "" {
                             pokemon1 = pokemon2
                             pokemon2 = emptyPokemon
                         } else {
                             pokemon1 = emptyPokemon
                         }
-                    }) {
-                        Text(pokemon1.name!).padding()
-                    }
+                    }.padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.top, 5)
+                    .padding(.bottom, 5)
+                    .font(.custom("Regular", size: 12))
+                    .background(Color.gray)
+                    .foregroundColor(.white)
                     Spacer()
-                    Button(action: {
+                    Text(pokemon2.name!).onTapGesture {
                         pokemon2 = emptyPokemon
-                    }) {
-                        Text(pokemon2.name!).padding()
-                    }
+                    }.padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.top, 5)
+                    .padding(.bottom, 5)
+                    .font(.custom("Regular", size: 12))
+                    .background(Color.gray)
+                    .foregroundColor(.white)
                     Spacer()
                     NavigationLink(destination: Comparison(pokemon1: pokemon1, pokemon2: pokemon2), tag: 1, selection: $action){
                         EmptyView()
@@ -70,6 +82,7 @@ struct CompareSearchView: View {
                     .foregroundColor(.white)
                     Spacer()
                 }
+                Spacer()
                 //The list to display the searched pokemon cards
                 if cardData != nil {
                     List {
@@ -85,19 +98,22 @@ struct CompareSearchView: View {
                                 VStack {
                                     RemoteImage(url: (pokemon.images?.small)!)
                                     HStack {
-                                        Text(pokemon.name!)
+                                        Text(pokemon.name!).font(.custom("Regular", size: 15))
                                     }
                                 }
                             }
                         }
                     }
                 } else {
-                    Text("Try Search")
+                    List{
+                        Text("Try Searching a Pokemon!").font(.custom("Regular", size: 30))
+                    }
+                    
                 }
                 
                 
             }
-        }
+        }.accentColor( .red)
     }
 }
 
@@ -161,6 +177,9 @@ struct RemoteImage: View {
         }
     }
 }
+
+
+
 
 struct CompareSearchView_Previews: PreviewProvider {
     static var previews: some View {
