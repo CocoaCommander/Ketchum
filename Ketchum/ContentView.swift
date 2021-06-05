@@ -30,6 +30,7 @@ struct ContentView: View {
                     Text("Search")
                         .font(.custom("Bold", size: 30))
                         .foregroundColor(Color.white)
+                    CompareSearchView()
                 }
                 else if self.index == 3 {
                     Color.red.edgesIgnoringSafeArea(.top)

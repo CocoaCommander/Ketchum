@@ -14,14 +14,17 @@ struct Comparison: View {
         VStack {
             Text("Comparison")
             HStack {
+                //First Pokemon
                 VStack {
                     Text(pokemon1.name!)
 //                    Image(pokemon1.images)
                 }
+                //Second Pokemon
                 VStack {
-                    //Second Pokemon
+                    Text(pokemon2.name!)
                 }
             }
         }
     }
 }
+
