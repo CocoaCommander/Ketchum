@@ -94,8 +94,8 @@ struct SearchBar: View {
             Button(
                 action: {
                     loadData(searchTerm: "?q=name:\(searchTerm)*")
-
-                    print("Expected \(searchTerm)")
+//                    print("Received: \(cardData?.data?[1].name ?? "load failed")")
+//                    print("Expected \(searchTerm)")
                 }, label: {
                     Text("GO!")
                         .padding(.leading, 10)

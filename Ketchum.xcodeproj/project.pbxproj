@@ -19,6 +19,10 @@
 		5E10FE0A26696D83000BE6C1 /* Comparison.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E10FE0926696D83000BE6C1 /* Comparison.swift */; };
 		5E4275B72669D1E000906C26 /* AnimateSplash.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4275B62669D1E000906C26 /* AnimateSplash.swift */; };
 		5E4275B92669D1F600906C26 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4275B82669D1F600906C26 /* About.swift */; };
+<<<<<<< HEAD
+=======
+		5E4275C1266AE2BF00906C26 /* CompareSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E4275C0266AE2BF00906C26 /* CompareSearchView.swift */; };
+>>>>>>> 079c4e699a6cf1fb99ae35e0dd42ab2205abb481
 		7502E83C2661E499003F6788 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7502E83B2661E499003F6788 /* CardInfo.swift */; };
 		7502E8402661E8F8003F6788 /* Nunito_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 7502E83F2661E8F7003F6788 /* Nunito_Sans */; };
 		75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BEE26687E0100C73D8E /* CustomTabs.swift */; };
@@ -39,6 +43,10 @@
 		5E10FE0926696D83000BE6C1 /* Comparison.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comparison.swift; sourceTree = "<group>"; };
 		5E4275B62669D1E000906C26 /* AnimateSplash.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimateSplash.swift; sourceTree = "<group>"; };
 		5E4275B82669D1F600906C26 /* About.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
+=======
+		5E4275C0266AE2BF00906C26 /* CompareSearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompareSearchView.swift; sourceTree = "<group>"; };
+>>>>>>> 079c4e699a6cf1fb99ae35e0dd42ab2205abb481
 		7502E83B2661E499003F6788 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		7502E83F2661E8F7003F6788 /* Nunito_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito_Sans; sourceTree = "<group>"; };
 		75BA3BEE26687E0100C73D8E /* CustomTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabs.swift; sourceTree = "<group>"; };
@@ -89,7 +97,11 @@
 				2D08D4A8266879E7006BD687 /* HomeView.swift */,
 				2D08D4AA26688262006BD687 /* HexToUIColor.swift */,
 				2D08D4AC26688719006BD687 /* APICaller.swift */,
+<<<<<<< HEAD
 				2DBFCA55266D7FC60027A94B /* SearchResultsView.swift */,
+=======
+				5E4275C0266AE2BF00906C26 /* CompareSearchView.swift */,
+>>>>>>> 079c4e699a6cf1fb99ae35e0dd42ab2205abb481
 			);
 			path = Ketchum;
 			sourceTree = "<group>";
@@ -179,6 +191,7 @@
 				2DBFCA56266D7FC60027A94B /* SearchResultsView.swift in Sources */,
 				75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */,
 				2D08D4AB26688262006BD687 /* HexToUIColor.swift in Sources */,
+				5E4275C1266AE2BF00906C26 /* CompareSearchView.swift in Sources */,
 				2D08D4AD26688719006BD687 /* APICaller.swift in Sources */,
 				5E4275B72669D1E000906C26 /* AnimateSplash.swift in Sources */,
 				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
