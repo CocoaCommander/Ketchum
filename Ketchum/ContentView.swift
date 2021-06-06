@@ -15,20 +15,13 @@ struct ContentView: View {
         VStack{
             ZStack {
                 if self.index == 0 {
-                    Color.red.edgesIgnoringSafeArea(.top
-                    )
-                    Text("About")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+                    About()
                 }
                 else if self.index == 1 {
                     CardInfo()
                 }
                 else if self.index == 2 {
-                    Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Search")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+                    CompareSearchView()
                 }
                 else if self.index == 3 {
                     Color.red.edgesIgnoringSafeArea(.top)

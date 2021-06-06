@@ -14,13 +14,15 @@ class APICaller {
     let API_KEY = "ff4617de-f79d-4bbe-a94f-bde94a28ccb1"
     var baseURL = "https://api.pokemontcg.io/v2/cards"
     var loadError: String = ""
-    var data: CardDataModel? = nil
+    var cardData: CardDataModel? = nil
     
     func loadData(searchTerm: String) -> Void {
         guard let url = URL(string: (baseURL + searchTerm)) else {
             print("Invalid URL")
             return
         }
+        
+        print(url.absoluteString)
         
         var request = URLRequest(url: url)
         request.addValue(API_KEY, forHTTPHeaderField: "X-Api-Key")
@@ -29,7 +31,8 @@ class APICaller {
                 do {
                     let decodedResponse = try JSONDecoder().decode(CardDataModel.self, from: data)
                     DispatchQueue.main.async {
-                        self.data = decodedResponse
+                        self.cardData = nil
+                        self.cardData = decodedResponse
                         UserDefaults.standard.set(data, forKey: "cardData")
                     }
                 } catch DecodingError.keyNotFound(let key, let context) {
