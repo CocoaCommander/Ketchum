@@ -10,7 +10,7 @@ import SwiftUI
 struct HomeView: View {
     
     @State var loadError: String = ""
-    @State var cardData: CardDataModel? = nil
+    @State var cardDataSearch: CardDataModel? = nil
     
     var body: some View {
         VStack {
@@ -22,7 +22,7 @@ struct HomeView: View {
             Text("Ketchum")
                 .font(.custom("Bold", size: 30))
                 .fontWeight(.medium)
-            SearchBar(loadError: $loadError, cardData: $cardData)
+            SearchBar(loadError: $loadError, cardData: $cardDataSearch)
             Text("try searching pikachu!")
                 .font(.custom("ExtraLight", size: 12))
 
@@ -44,6 +44,9 @@ struct SearchBar: View {
             print("Invalid URL")
             return
         }
+        let group = DispatchGroup()
+        group.enter()
+        //let semaphore = DispatchSemaphore(value: 0)
         
         print("\n \(url.absoluteString)")
         
@@ -55,8 +58,9 @@ struct SearchBar: View {
                     let decodedResponse = try JSONDecoder().decode(CardDataModel.self, from: data)
                     DispatchQueue.main.async {
                         self.cardData = decodedResponse
-                        UserDefaults.standard.set(data, forKey: "cardData")
+                        group.leave()
                     }
+                    //semaphore.signal()
                 } catch DecodingError.keyNotFound(let key, let context) {
                     self.loadError = "could not find key \(key) in JSON: \(context.debugDescription)"
                 } catch DecodingError.valueNotFound(let type, let context) {
@@ -69,7 +73,15 @@ struct SearchBar: View {
                     self.loadError = "Error in read(from:ofType:) domain= \(error.domain), description= \(error.localizedDescription)"
                 }
             }
+            
         }.resume()
+        //_ = semaphore.wait(wallTimeout: .distantFuture)
+        
+        group.notify(queue: .main) {
+            print("Received: \(cardData?.data?[1].name ?? "load failed")")
+        }
+
+        return
     }
     
     
@@ -82,7 +94,7 @@ struct SearchBar: View {
             Button(
                 action: {
                     loadData(searchTerm: "?q=name:\(searchTerm)*")
-                    print("Received: \(cardData?.data?[1].name ?? "load failed")")
+
                     print("Expected \(searchTerm)")
                 }, label: {
                     Text("GO!")
@@ -93,6 +105,7 @@ struct SearchBar: View {
                         .font(.custom("Regular", size: 12))
                         .background(Color.red)
                         .foregroundColor(.white)
+                        .cornerRadius(10.0)
                 }
             )
             
