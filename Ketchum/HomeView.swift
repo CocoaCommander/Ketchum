@@ -12,21 +12,27 @@ struct HomeView: View {
     @State var loadError: String = ""
     @State var cardDataSearch: CardDataModel? = nil
     
+    @ViewBuilder
     var body: some View {
         VStack {
-            Image("pokeball")
-                .resizable()
-                .renderingMode(.original)
-                .aspectRatio(contentMode: .fit)
-                .frame(width: CGFloat(100), height: CGFloat(100))
-            Text("Ketchum")
-                .font(.custom("Bold", size: 30))
-                .fontWeight(.medium)
+            HStack {
+                Image("pokeball")
+                    .resizable()
+                    .renderingMode(.original)
+                    .aspectRatio(contentMode: .fit)
+                    .frame(width: CGFloat(100), height: CGFloat(100))
+                Text("Ketchum")
+                    .font(.custom("Bold", size: 30))
+                    .fontWeight(.medium)
+            }
             SearchBar(loadError: $loadError, cardData: $cardDataSearch)
             Text("try searching pikachu!")
                 .font(.custom("ExtraLight", size: 12))
-
+            if cardDataSearch != nil {
+                SearchResultsView(cardData: $cardDataSearch)
+            }
         }
+
     }
 }
 
@@ -78,7 +84,7 @@ struct SearchBar: View {
         //_ = semaphore.wait(wallTimeout: .distantFuture)
         
         group.notify(queue: .main) {
-            print("Received: \(cardData?.data?[1].name ?? "load failed")")
+            print("Received: \(cardData?.data?[1].images?.small ?? "load failed")")
         }
 
         return
