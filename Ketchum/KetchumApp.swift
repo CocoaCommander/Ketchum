@@ -12,8 +12,8 @@ struct KetchumApp: App {
     var body: some Scene {
         WindowGroup {
             //ContentView()
-//            HomeView()
-            CompareSearchView()
+            HomeView()
+            //CompareSearchView()
         }
     }
 }
