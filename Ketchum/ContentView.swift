@@ -14,21 +14,26 @@ struct ContentView: View {
     var body: some View {
         VStack{
             ZStack {
+                //About page
                 if self.index == 0 {
                     About()
                 }
+                //Favorites list
                 else if self.index == 1 {
-                    CardInfo()
-                }
-                else if self.index == 2 {
-                    CompareSearchView()
-                }
-                else if self.index == 3 {
                     Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Compare")
+                    Text("Favorites")
                         .font(.custom("Bold", size: 30))
                         .foregroundColor(Color.white)
+                }
+                //Search cards
+                else if self.index == 2 {
+                    CardInfo()
+                }
+                //Comparing
+                else if self.index == 3 {
+                    CompareSearchView()
                 } else{
+                    //Custom deck build
                     Color.red.edgesIgnoringSafeArea(.top)
                     Text("My Deck")
                         .font(.custom("Bold", size: 30))

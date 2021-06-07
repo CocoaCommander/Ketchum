@@ -28,7 +28,7 @@ struct Tabs : View {
             Button(action: {
                 self.index = 1
             }, label: {
-                Text("favorite")
+                Text("Favorite")
                     .font(.custom("Bold", size: 16))
             })
             .foregroundColor(Color.red.opacity(self.index == 1 ? 1 : 0.2))
