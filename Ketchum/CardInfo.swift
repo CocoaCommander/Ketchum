@@ -9,44 +9,133 @@ import Foundation
 import SwiftUI
 
 struct CardInfo: View {
+    
+    //@State var pokemon: Datum
+    
     var body: some View {
-        ScrollView {
-            VStack (alignment: .center) {
-                Image("Venausaur")
-                    .padding(.top)
-                Text("Celebi & Venausaur")
-                    .font(.custom("Bold", size: 24))
+        VStack {
+            Image("Venausaur")
+            /*RemoteImage(url: (pokemon.images?.small)!)*/
+                .padding(.top)
+            Text("Celebi & Venausaur"/*pokemon.name!*/)
+                .font(.custom("Bold", size: 24))
+                .padding()
+            VStack {
+                Divider()
+                HStack{
+                    VStack{
+                    Text("HP")
+                        .font(.custom("Bold", size: 18))
+                        .foregroundColor(Color.red)
+                    Text("80"/*pokemon.hp!*/)
+                        .font(.custom("Italic", size: 14))
+                    }
                     .padding()
-                VStack (spacing: 5){
                     Divider()
-                        Text("Rarity")
+                        .frame(maxHeight: 70)
+                    VStack{
+                        Text("Energy")
                             .font(.custom("Bold", size: 18))
                             .foregroundColor(Color.red)
-                        Text("Rare Ultra")
-                            .font(.custom("Italic", size: 12))
-                    Divider()
-                    Group{
-                        Text("Attacks")
-                            .font(.custom("Bold", size: 18))
-                            .foregroundColor(Color.red)
-                        Text("Pollen Hazard")
-                            .font(.custom("Bold", size: 14))
-                        Text("Your opponent's Active Pokemon is now Burned, Confused, and Poisoned.")
-                            .font(.custom("Italic", size: 12))
-                        Text("Solar Beam")
-                            .font(.custom("Bold", size: 14))
-                        Text("Evergreen-GX")
-                            .font(.custom("Bold", size: 14))
-                        Text("Blah blah blah blah")
-                            .font(.custom("Italic", size: 12))
-                    Divider()
-                        Text("Prices")
-                            .font(.custom("Bold", size: 18))
-                            .foregroundColor(Color.red)
+                        Text("Grass"/*pokemon.energy!*/)
+                            .font(.custom("Italic", size: 14))
+                    }
+                    .padding()
+                    
+                }
+               
+                
+                Divider()
+                Group{
+                    HStack{
+                        VStack(alignment: .leading){
+                    Text("Attacks")
+                        .font(.custom("Bold", size: 18))
+                        .foregroundColor(Color.red)
+                        .padding(.top)
+                    Text("Pollen Hazard ...")
+                        .font(.custom("Regular", size: 14))
+                    Text("Solar Beam ...")
+                        .font(.custom("Regular", size: 14))
+                    Text("Evergreen-GX ...")
+                        .font(.custom("Regular", size: 14))
+                    /*
+                    ForEach(pokemon.attacks!, id: \.name) { attack in
+                     Text(attack.name!).font(.custom("Bold", size: 14))
+                         */
+                        }
+                        VStack(alignment: .trailing) {
+                            Text("DMG")
+                                .font(.custom("Bold", size: 18))
+                                .foregroundColor(Color.red)
+                                .padding(.top)
+                            Text("50")
+                                .font(.custom("Bold", size: 14))
+                            Text("150")
+                                .font(.custom("Bold", size: 14))
+                            Text("180")
+                                .font(.custom("Bold", size: 14))
+                            /*
+                            ForEach(pokemon.attacks.damage!, id: \.name) { attack in
+                             Text(attack.name!).font(.custom("Bold", size: 14))
+                                 */
+                        }
+                        
                     }
                 }
+                Divider()
+                    Text("Prices")
+                        .font(.custom("Bold", size: 18))
+                        .foregroundColor(Color.red)
+                        .padding(.top)
+                    HStack{
+                        VStack{
+                            Text("Market")
+                                .font(.custom("Bold", size: 14))
+                            Text("$15.85")
+                                .font(.custom("Italic", size: 14))
+                            /*if pokemon1.tcgplayer?.prices?.holofoil?.market != nil {
+                            Text(String((pokemon.tcgplayer?.prices?.holofoil?.market)!)).font(.custom("Italic", size: 14))
+                        }*/
+                            
+                        
+                        }
+                        .padding(.leading)
+                        
+                        VStack{
+                        Text("Low")
+                            .font(.custom("Bold", size: 14))
+                        Text("$15.58")
+                            .font(.custom("Italic", size: 14))
+                        /*if pokemon1.tcgplayer?.prices?.holofoil?.market != nil {
+                            Text(String((pokemon.tcgplayer?.prices?.holofoil?.low)!)).font(.custom("Italic", size: 14))
+                        }*/
+                        }
+                        .padding()
+                        
+                        VStack{
+                        Text("Mid")
+                            .font(.custom("Bold", size: 14))
+                        Text("$24.99")
+                            .font(.custom("Italic", size: 14))
+                        /*if pokemon1.tcgplayer?.prices?.holofoil?.mid != nil {
+                            Text(String((pokemon.tcgplayer?.prices?.holofoil?.mid)!)).font(.custom("Italic", size: 14))
+                        }*/
+                        }
+                        
+                        VStack{
+                        Text("High")
+                            .font(.custom("Bold", size: 14))
+                        Text("$42.95")
+                            .font(.custom("Italic", size: 14))
+                        /*if pokemon1.tcgplayer?.prices?.holofoil?.high != nil {
+                            Text(String((pokemon.tcgplayer?.prices?.holofoil?.high)!)).font(.custom("Italic", size: 14))
+                        }*/
+                            
+                        }
+                        .padding()
+                    }
             }
-            .ignoresSafeArea(.all, edges: .all)
         }
     }
 }
