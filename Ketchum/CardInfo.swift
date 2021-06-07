@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 
 struct CardInfo: View {
+    // Replace fillers with commented code after search is done
     
     //@State var pokemon: Datum
     
@@ -44,7 +45,6 @@ struct CardInfo: View {
                     
                 }
                
-                
                 Divider()
                 Group{
                     HStack{

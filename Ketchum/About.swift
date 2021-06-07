@@ -22,7 +22,6 @@ struct About: View {
                     .font(.custom("Bold", size: 30))
                     .fontWeight(.medium)
             }
-        
                 ZStack {
                     Image("border")
                         .resizable()
@@ -36,7 +35,6 @@ struct About: View {
                         .frame(width: 300)
                 }
         }
-        
     }
 }
 
