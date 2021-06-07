@@ -13,32 +13,29 @@ struct ContentView: View {
     @EnvironmentObject var userStore: UserStorage
 
     var body: some View {
-    
         VStack{
             ZStack {
+                //About page
                 if self.index == 0 {
-                    Color.red.edgesIgnoringSafeArea(.top
-                    )
-                    Text("About")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+                    About()
                 }
+                //Favorites list
                 else if self.index == 1 {
-                    CardInfo()
-                }
-                else if self.index == 2 {
                     Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Search")
+                    Text("Favorites")
                         .font(.custom("Bold", size: 30))
                         .foregroundColor(Color.white)
                     CompareSearchView().environmentObject(userStore)
                 }
+                //Search cards & search results
+                else if self.index == 2 {
+                    CardInfo()
+                }
+                //Comparing cards
                 else if self.index == 3 {
-                    Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Compare")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+                    CompareSearchView()
                 } else{
+                    //Custom deck build
                     Color.red.edgesIgnoringSafeArea(.top)
                     Text("My Deck")
                         .font(.custom("Bold", size: 30))
