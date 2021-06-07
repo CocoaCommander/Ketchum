@@ -22,13 +22,12 @@ struct About: View {
                     .font(.custom("Bold", size: 30))
                     .fontWeight(.medium)
             }
-        
                 ZStack {
                     Image("border")
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                         
-                    Text("We cater to those who want to learn more about trading cards. You can find all the information you need to know on hundreds of Pokemon. Our hope is to help you \"Catch 'Em All\"!")
+                    Text("Welcome to the world of trading cards. You can compare cards, build your own deck and find all the information you need to know on hundreds of Pokemon. Now lets \"Catch 'Em All\"!")
                         .font(.custom("Regular", size: 14))
                         .multilineTextAlignment(.center)
                         .lineLimit(4)
@@ -36,7 +35,6 @@ struct About: View {
                         .frame(width: 300)
                 }
         }
-        
     }
 }
 

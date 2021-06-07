@@ -25,11 +25,11 @@ struct ContentView: View {
                         .font(.custom("Bold", size: 30))
                         .foregroundColor(Color.white)
                 }
-                //Search cards
+                //Search cards & search results
                 else if self.index == 2 {
                     CardInfo()
                 }
-                //Comparing
+                //Comparing cards
                 else if self.index == 3 {
                     CompareSearchView()
                 } else{
