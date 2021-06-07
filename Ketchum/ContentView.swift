@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State var index = 0
-    
+    @EnvironmentObject var userStore: UserStorage
+
     var body: some View {
     
         VStack{
@@ -30,7 +31,7 @@ struct ContentView: View {
                     Text("Search")
                         .font(.custom("Bold", size: 30))
                         .foregroundColor(Color.white)
-                    CompareSearchView()
+                    CompareSearchView().environmentObject(userStore)
                 }
                 else if self.index == 3 {
                     Color.red.edgesIgnoringSafeArea(.top)
