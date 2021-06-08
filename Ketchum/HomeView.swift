@@ -84,7 +84,7 @@ struct SearchBar: View {
         //_ = semaphore.wait(wallTimeout: .distantFuture)
         
         group.notify(queue: .main) {
-            print("Received: \(cardData?.data?[1].images?.small ?? "load failed")")
+            print("Received: \(cardData?.data?[0].images?.small ?? "load failed")")
         }
 
         return
@@ -99,7 +99,7 @@ struct SearchBar: View {
                 .disableAutocorrection(true)
             Button(
                 action: {
-                    loadData(searchTerm: "?q=name:\(searchTerm)*")
+                    loadData(searchTerm: "?q=name:\(searchTerm)*pageSize=1")
 //                    print("Received: \(cardData?.data?[1].name ?? "load failed")")
 //                    print("Expected \(searchTerm)")
                 }, label: {
