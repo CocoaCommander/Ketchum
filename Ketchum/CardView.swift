@@ -15,9 +15,9 @@ struct CardView: View {
     @State var showMessage = false
     @State var message: String = " "
     @State var isFavorited = false
+    @State var showCardInfo = false
+    //    @EnvironmentObject var dataStore: DataStore
     
-//    @EnvironmentObject var dataStore: DataStore
-
     // add init to check OO if the card exists in deck or favorites to set state
     init(cardData: Datum) {
         self.cardData = cardData
@@ -26,98 +26,85 @@ struct CardView: View {
     var body: some View {
         NavigationView {
         VStack {
-//            Button(action: {
-//                print("button clicked")
-//            }) {
-//                VStack {
-//                    Text("this is the card view")
-//                    if (cardData.id != "") {
-//                        RemoteImage(url: (cardData.images?.small)!).padding()
-//                        HStack {
-//                            Text(cardData.name!).font(.custom("Regular", size: 15))
-//                        }
-//                    }
-//                }
-//            }
-            VStack {
+            NavigationLink(
+                destination: /*@START_MENU_TOKEN@*/Text("Destination")/*@END_MENU_TOKEN@*/,
+                label: {
+                    Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
+                })
+            
                 if (cardData.id != "") {
-//                    Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
-
                     RemoteImage(url: (cardData.images?.small)!).padding()
-                    HStack {
-                        Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
+
+
+                }
+            
+                HStack {
+                    // favorites button
+                    if (self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.favorites)) {
+                        Button(action: {
+                            // if card data is not empty
+                            self.showMessage = true
+                            if (self.cardData.artist != "") {
+                                self.userStore.removeFavorite(removedCard: cardData, arrayToUpdate: self.userStore.favorites)
+                                self.message = "Card Unfavorited"
+                            }
+                        }) {
+                            Text("Remove From Favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                        }.padding()
+                    } else {
+                        Button(action: {
+                            var str = String()
+                            self.showMessage = true
+                            if (self.cardData.artist != "") {
+                                str = self.userStore.addToFavorites(newcard: self.cardData)
+                                self.message = "Added to favorites"
+                            }
+                            print(str)
+                        }) {
+                            Text("Add to favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.bottom).padding(.leading)
+                        }.padding()
                     }
-                }
-            }
-            VStack{
-                NavigationLink(
-                    destination: CardInfo(pokemon: cardData),
-                    label: {
-                        Text("More Info").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.top)
-                    })
-            HStack {
-                // favorites button
-                if (self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.favorites)) {
-                    Button(action: {
-                        // if card data is not empty
-                        self.showMessage = true
-                        if (self.cardData.artist != "") {
-                            self.userStore.removeFavorite(removedCard: cardData, arrayToUpdate: self.userStore.favorites)
-                            self.message = "Card Unfavorited"
-                        }
-                    }) {
-                        Text("Remove From Favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
-                    }.padding()
-                } else {
-                    Button(action: {
-                        var str = String()
-                        self.showMessage = true
-                        if (self.cardData.artist != "") {
-                            str = self.userStore.addToFavorites(newcard: self.cardData)
-                            self.message = "Added to favorites"
-                        }
-                        print(str)
-                    }) {
-                        Text("Add to favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.bottom).padding(.leading)
-                    }.padding()
-                }
-                Spacer()
-                
-                // if is not in deck
-                if (!self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.deck)) {
-                    Button(action: {
-                        self.showMessage = true
-                        if (self.cardData.artist != "") {
-                            let str = self.userStore.addToDeck(newcard: self.cardData)
-                            self.message = str
-                        }
-                    }) {
-                        Text("Add to deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.bottom).padding(.trailing)
-                    }.padding()
+                    Spacer()
                     
-                } else {
-                    Button(action: {
-                        self.showMessage = true
-                        if (self.cardData.artist != "") {
-                            //let str = self.userStore.addToDeck(newcard: self.cardData)
-                            self.userStore.removeFromDeck(removedCard: cardData, arrayToUpdate: self.userStore.deck)
-                            self.message = "Removed From Deck"
-                        }
-                    }) {
-                        Text("Remove From Deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
-                    }.padding()
+                    // if is not in deck
+                    if (!self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.deck)) {
+                        Button(action: {
+                            self.showMessage = true
+                            if (self.cardData.artist != "") {
+                                let str = self.userStore.addToDeck(newcard: self.cardData)
+                                self.message = str
+                            }
+                        }) {
+                            Text("Add to deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.bottom).padding(.trailing)
+                        }.padding()
+                        
+                    } else {
+                        Button(action: {
+                            self.showMessage = true
+                            if (self.cardData.artist != "") {
+                                //let str = self.userStore.addToDeck(newcard: self.cardData)
+                                self.userStore.removeFromDeck(removedCard: cardData, arrayToUpdate: self.userStore.deck)
+                                self.message = "Removed From Deck"
+                            }
+                        }) {
+                            Text("Remove From Deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                        }.padding()
+                        
+                    }
                     
                 }
-                
-            }.alert(isPresented: $showMessage) {
-                Alert(title: Text(""), message: Text(self.message), dismissButton: .default(Text("Ok")))
-            }
-        }
+                .alert(isPresented: $showMessage) {
+                    Alert(title: Text(""), message: Text(self.message), dismissButton: .default(Text("Ok")))
+                }
+            
             .background(Rectangle().foregroundColor(.gray).cornerRadius(10).opacity(0.2).padding())
         }
         }
+        
     }
 }
+
+
 
 
 struct CardView_Previews: PreviewProvider {
