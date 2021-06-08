@@ -140,3 +140,6 @@ struct CardInfo: View {
 }
 }
 }
+
+
+

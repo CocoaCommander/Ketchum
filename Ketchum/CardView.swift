@@ -113,7 +113,8 @@ struct CardView: View {
                 Alert(title: Text(""), message: Text(self.message), dismissButton: .default(Text("Ok")))
             }
         }
-        }.background(Rectangle().foregroundColor(.gray).cornerRadius(10).opacity(0.2).padding())
+            .background(Rectangle().foregroundColor(.gray).cornerRadius(10).opacity(0.2).padding())
+        }
         }
     }
 }
