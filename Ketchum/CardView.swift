@@ -49,7 +49,12 @@ struct CardView: View {
                     }
                 }
             }
-            
+            VStack{
+                NavigationLink(
+                    destination: CardInfo(pokemon: cardData),
+                    label: {
+                        Text("More Info").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.top)
+                    })
             HStack {
                 // favorites button
                 if (self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.favorites)) {
@@ -73,7 +78,7 @@ struct CardView: View {
                         }
                         print(str)
                     }) {
-                        Text("Add to favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                        Text("Add to favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.bottom).padding(.leading)
                     }.padding()
                 }
                 Spacer()
@@ -87,8 +92,9 @@ struct CardView: View {
                             self.message = str
                         }
                     }) {
-                        Text("Add to deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                        Text("Add to deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding(.bottom).padding(.trailing)
                     }.padding()
+                    
                 } else {
                     Button(action: {
                         self.showMessage = true
@@ -101,19 +107,17 @@ struct CardView: View {
                         Text("Remove From Deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
                     }.padding()
                     
-                    NavigationLink(
-                        destination: CardInfo(pokemon: cardData),
-                        label: {
-                            Text("More Info").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
-                        })
                 }
+                
             }.alert(isPresented: $showMessage) {
                 Alert(title: Text(""), message: Text(self.message), dismissButton: .default(Text("Ok")))
             }
+        }
         }.background(Rectangle().foregroundColor(.gray).cornerRadius(10).opacity(0.2).padding())
+        }
     }
 }
-}
+
 
 struct CardView_Previews: PreviewProvider {
     static var previews: some View {
