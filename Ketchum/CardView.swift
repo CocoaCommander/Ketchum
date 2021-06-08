@@ -39,9 +39,11 @@ struct CardView: View {
 //            }
             VStack {
                 if (cardData.id != "") {
+//                    Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
+
                     RemoteImage(url: (cardData.images?.small)!).padding()
                     HStack {
-                        Text(cardData.name!).font(.custom("Regular", size: 15))
+                        Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
                     }
                 }
             }
@@ -52,14 +54,13 @@ struct CardView: View {
                     Button(action: {
                         // if card data is not empty
                         self.showMessage = true
-                        print(self.cardData.supertype)
                         if (self.cardData.artist != "") {
                             self.userStore.removeFavorite(removedCard: cardData, arrayToUpdate: self.userStore.favorites)
                             self.message = "Card Unfavorited"
                         }
                     }) {
-                        Text("Remove From Favorites").padding()
-                    }
+                        Text("Remove From Favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                    }.padding()
                 } else {
                     Button(action: {
                         var str = String()
@@ -70,8 +71,8 @@ struct CardView: View {
                         }
                         print(str)
                     }) {
-                        Text("Add to favorites").padding()
-                    }
+                        Text("Add to favorites").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                    }.padding()
                 }
                 Spacer()
                 
@@ -84,8 +85,8 @@ struct CardView: View {
                             self.message = str
                         }
                     }) {
-                        Text("Add to deck").padding()
-                    }
+                        Text("Add to deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                    }.padding()
                 } else {
                     Button(action: {
                         self.showMessage = true
@@ -95,13 +96,13 @@ struct CardView: View {
                             self.message = "Removed From Deck"
                         }
                     }) {
-                        Text("Remove From Deck").padding()
-                    }
+                        Text("Remove From Deck").padding().font(.custom("Regular", size: 15)).foregroundColor(.white).background(Rectangle().foregroundColor(.red).cornerRadius(20)).padding()
+                    }.padding()
                 }
             }.alert(isPresented: $showMessage) {
                 Alert(title: Text(""), message: Text(self.message), dismissButton: .default(Text("Ok")))
             }
-        }
+        }.background(Rectangle().foregroundColor(.gray).cornerRadius(10).opacity(0.2).padding())
     }
 }
 

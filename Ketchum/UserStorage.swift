@@ -44,9 +44,9 @@ class UserStorage: ObservableObject {
     func addToDeck(newcard: Datum) -> String {
         if (deck.count < 60) {
             deck.append(newcard)
-            return("added to deck")
+            return("Added to Deck")
         }
         print(String(self.deck.count))
-        return("deck already has 60 cards")
+        return("Deck already has 60 cards")
     }
 }

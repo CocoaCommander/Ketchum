@@ -21,7 +21,7 @@ struct ContentView: View {
                 }
                 //Favorites list
                 else if self.index == 1 {
-                    Color.red.edgesIgnoringSafeArea(.top)
+//                    Color.red.edgesIgnoringSafeArea(.top)
 //                    Text("Favorites")
 //                        .font(.custom("Bold", size: 30))
 //                        .foregroundColor(Color.white)
