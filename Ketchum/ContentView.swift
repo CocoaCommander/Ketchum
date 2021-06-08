@@ -21,25 +21,27 @@ struct ContentView: View {
                 }
                 //Favorites list
                 else if self.index == 1 {
-                    Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Favorites")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
-                    CompareSearchView().environmentObject(userStore)
+//                    Color.red.edgesIgnoringSafeArea(.top)
+//                    Text("Favorites")
+//                        .font(.custom("Bold", size: 30))
+//                        .foregroundColor(Color.white)
+                    FavoritesView().environmentObject(userStore)
                 }
                 //Search cards & search results
                 else if self.index == 2 {
-                    CardInfo()
+                    // pass home view an environment object
+                    HomeView().environmentObject(userStore)
                 }
                 //Comparing cards
                 else if self.index == 3 {
-                    CompareSearchView()
+                    CompareSearchView().environmentObject(userStore)
                 } else{
                     //Custom deck build
-                    Color.red.edgesIgnoringSafeArea(.top)
-                    Text("My Deck")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+//                    Color.red.edgesIgnoringSafeArea(.top)
+//                    Text("My Deck")
+//                        .font(.custom("Bold", size: 30))
+//                        .foregroundColor(Color.white)
+                    DeckView().environmentObject(userStore)
                 }
                Welcome()
             }
@@ -52,7 +54,7 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(UserStorage())
     }
 }
 

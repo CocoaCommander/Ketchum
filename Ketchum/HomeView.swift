@@ -11,7 +11,8 @@ struct HomeView: View {
     
     @State var loadError: String = ""
     @State var cardDataSearch: CardDataModel? = nil
-    
+    @EnvironmentObject var userStore: UserStorage
+
     @ViewBuilder
     var body: some View {
         VStack {
@@ -29,7 +30,9 @@ struct HomeView: View {
             Text("try searching pikachu!")
                 .font(.custom("ExtraLight", size: 12))
             if cardDataSearch != nil {
-                SearchResultsView(cardData: $cardDataSearch)
+                
+                //add environment object
+                SearchResultsView(cardData: $cardDataSearch).environmentObject(userStore)
             }
         }
 

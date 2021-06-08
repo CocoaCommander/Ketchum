@@ -10,7 +10,8 @@ import SwiftUI
 struct SearchResultsView: View {
     
     @Binding var cardData: CardDataModel?
-    
+    @EnvironmentObject var userStore: UserStorage
+
     var body: some View {
         VStack {
             ScrollView(.vertical) {
@@ -26,9 +27,15 @@ struct SearchResultsView: View {
 //                        }
 //                    }
 //                }
-                ForEach(0..<(cardData?.data!.count)!) { index in
-                    SearchResultCard(name: (cardData?.data![index].name)!, imageURL: (cardData?.data![index].images?.large)!)
+                ForEach(((self.cardData?.data)!), id: \.id) { card in
+                    CardView(cardData: card).environmentObject(userStore)
                 }
+//                ForEach(0..<(cardData?.data!.count)!) { index in
+//                    //add environment variable
+//                    // use cardView here
+//                    CardView(cardData: cardData.data[index])
+////                    SearchResultCard(name: (cardData?.data![index].name)!, imageURL: (cardData?.data![index].images?.large)!)
+//                }
             }
         }
     }
