@@ -48,7 +48,9 @@ struct ContentView: View {
             .padding(.bottom, -35)
             Spacer()
             Tabs(index: self.$index)
+                
             }
+        .ignoresSafeArea(.keyboard)
         }
 }
 

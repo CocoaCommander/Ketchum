@@ -102,7 +102,7 @@ struct SearchBar: View {
                 .disableAutocorrection(true)
             Button(
                 action: {
-                    loadData(searchTerm: "?q=name:\(searchTerm)*pageSize=1")
+                    loadData(searchTerm: "?q=name:\(searchTerm)*")
 //                    print("Received: \(cardData?.data?[1].name ?? "load failed")")
 //                    print("Expected \(searchTerm)")
                 }, label: {

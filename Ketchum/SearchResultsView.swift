@@ -36,6 +36,9 @@ struct SearchResultsView: View {
 //                    CardView(cardData: cardData.data[index])
 ////                    SearchResultCard(name: (cardData?.data![index].name)!, imageURL: (cardData?.data![index].images?.large)!)
 //                }
+//                ForEach(0..<(cardData?.data!.count)!) { index in
+//                    SearchResultCard(name: (cardData?.data![index].name)!, imageURL: (cardData?.data![index].images?.large)!)
+//                }
             }
         }
     }
