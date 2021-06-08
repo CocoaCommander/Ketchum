@@ -4,7 +4,18 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string></string>
+		<string>NunitoSans-SemiBoldItalic.ttf</string>
+		<string>NunitoSans-SemiBold.ttf</string>
+		<string>NunitoSans-Regular.ttf</string>
+		<string>NunitoSans-LightItalic.ttf</string>
+		<string>NunitoSans-Light.ttf</string>
+		<string>NunitoSans-Italic.ttf</string>
+		<string>NunitoSans-ExtraLightItalic.ttf</string>
+		<string>NunitoSans-ExtraLight.ttf</string>
+		<string>NunitoSans-BoldItalic.ttf</string>
+		<string>NunitoSans-Bold.ttf</string>
+		<string>NunitoSans-BlackItalic.ttf</string>
+		<string>NunitoSans-Black.ttf</string>
 	</array>
 	<key>SemiBoldItalic</key>
 	<string>NunitoSans-SemiBoldItalic.ttf</string>
