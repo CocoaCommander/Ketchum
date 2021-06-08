@@ -23,6 +23,10 @@
 		7502E83C2661E499003F6788 /* CardInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7502E83B2661E499003F6788 /* CardInfo.swift */; };
 		7502E8402661E8F8003F6788 /* Nunito_Sans in Resources */ = {isa = PBXBuildFile; fileRef = 7502E83F2661E8F7003F6788 /* Nunito_Sans */; };
 		75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BA3BEE26687E0100C73D8E /* CustomTabs.swift */; };
+		DB54B05E266D644E00D2C654 /* UserStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54B05D266D644E00D2C654 /* UserStorage.swift */; };
+		DB54B061266D684400D2C654 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54B060266D684400D2C654 /* CardView.swift */; };
+		DB54B0A7266EA35B00D2C654 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54B0A6266EA35A00D2C654 /* FavoritesView.swift */; };
+		DB54B0AA266EB97F00D2C654 /* DeckView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB54B0A9266EB97F00D2C654 /* DeckView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +48,10 @@
 		7502E83B2661E499003F6788 /* CardInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardInfo.swift; sourceTree = "<group>"; };
 		7502E83F2661E8F7003F6788 /* Nunito_Sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Nunito_Sans; sourceTree = "<group>"; };
 		75BA3BEE26687E0100C73D8E /* CustomTabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabs.swift; sourceTree = "<group>"; };
+		DB54B05D266D644E00D2C654 /* UserStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStorage.swift; sourceTree = "<group>"; };
+		DB54B060266D684400D2C654 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		DB54B0A6266EA35A00D2C654 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		DB54B0A9266EB97F00D2C654 /* DeckView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeckView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +68,7 @@
 		2D62E12A265F043B0007B1B7 = {
 			isa = PBXGroup;
 			children = (
+				DB54B0A9266EB97F00D2C654 /* DeckView.swift */,
 				2D62E135265F043B0007B1B7 /* Ketchum */,
 				2D62E134265F043B0007B1B7 /* Products */,
 			);
@@ -93,6 +102,9 @@
 				2D08D4AC26688719006BD687 /* APICaller.swift */,
 				2DBFCA55266D7FC60027A94B /* SearchResultsView.swift */,
 				5E4275C0266AE2BF00906C26 /* CompareSearchView.swift */,
+				DB54B05D266D644E00D2C654 /* UserStorage.swift */,
+				DB54B060266D684400D2C654 /* CardView.swift */,
+				DB54B0A6266EA35A00D2C654 /* FavoritesView.swift */,
 			);
 			path = Ketchum;
 			sourceTree = "<group>";
@@ -179,6 +191,8 @@
 				5E4275B92669D1F600906C26 /* About.swift in Sources */,
 				2DAAC269266832EC0019D849 /* CardDataModel.swift in Sources */,
 				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
+				DB54B061266D684400D2C654 /* CardView.swift in Sources */,
+				DB54B05E266D644E00D2C654 /* UserStorage.swift in Sources */,
 				2DBFCA56266D7FC60027A94B /* SearchResultsView.swift in Sources */,
 				75BA3BEF26687E0200C73D8E /* CustomTabs.swift in Sources */,
 				2D08D4AB26688262006BD687 /* HexToUIColor.swift in Sources */,
@@ -186,8 +200,10 @@
 				2D08D4AD26688719006BD687 /* APICaller.swift in Sources */,
 				5E4275B72669D1E000906C26 /* AnimateSplash.swift in Sources */,
 				7502E83C2661E499003F6788 /* CardInfo.swift in Sources */,
+				DB54B0A7266EA35B00D2C654 /* FavoritesView.swift in Sources */,
 				2D08D4A9266879E7006BD687 /* HomeView.swift in Sources */,
 				2D62E137265F043C0007B1B7 /* KetchumApp.swift in Sources */,
+				DB54B0AA266EB97F00D2C654 /* DeckView.swift in Sources */,
 				5E10FE0A26696D83000BE6C1 /* Comparison.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

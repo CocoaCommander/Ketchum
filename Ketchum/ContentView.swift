@@ -10,7 +10,8 @@ import SwiftUI
 struct ContentView: View {
     
     @State var index = 0
-    
+    @EnvironmentObject var userStore: UserStorage
+
     var body: some View {
         VStack{
             ZStack {
@@ -20,10 +21,7 @@ struct ContentView: View {
                 }
                 //Favorites list
                 else if self.index == 1 {
-                    Color.red.edgesIgnoringSafeArea(.top)
-                    Text("Favorites")
-                        .font(.custom("Bold", size: 30))
-                        .foregroundColor(Color.white)
+                    
                 }
                 //Search cards & search results
                 else if self.index == 2 {
