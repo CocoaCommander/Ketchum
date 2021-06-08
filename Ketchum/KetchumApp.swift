@@ -9,11 +9,15 @@ import SwiftUI
 
 @main
 struct KetchumApp: App {
+//    @StateObject private var order = Order()
+    @StateObject private var userStore = UserStorage()
+//    @EnvironmentObject var userStore: UserStorage
+
     var body: some Scene {
         WindowGroup {
-            //ContentView()
+            ContentView().environmentObject(userStore)
 //            HomeView()
-            CompareSearchView()
+//            CompareSearchView().environmentObject(userStore)
         }
     }
 }

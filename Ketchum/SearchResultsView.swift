@@ -9,38 +9,47 @@ import SwiftUI
 
 struct SearchResultsView: View {
     
-    private let columnCount = 2
-    
+    @Binding var cardData: CardDataModel?
+    @EnvironmentObject var userStore: UserStorage
+
     var body: some View {
         VStack {
-            HStack {
-                Image("pokeball")
-                    .resizable()
-                    .renderingMode(.original)
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: CGFloat(100), height: CGFloat(100))
-                Text("Ketchum")
-                    .font(.custom("Bold", size: 30))
-                    .fontWeight(.medium)
-            }
             ScrollView(.vertical) {
-                ForEach(0..<30) { column in
-                    HStack {
-                        ForEach(0..<2) { row in
-                            SearchResultCard()
-                        }
-                    }
+                
+//                This code fails on odd numbered results
+//                let columnCount: Int = 2
+//                let dataLength: Double = Double((self.cardData?.data?.count)!)
+//                let rowCount: Int = Int((dataLength / Double(columnCount)).rounded(.up))
+//                ForEach(0..<rowCount) { row in
+//                    HStack {
+//                        ForEach(0..<columnCount) { column in
+//                            SearchResultCard(name: (cardData?.data![row * 2 + column].name)!, imageURL: (cardData?.data![row * 2 + column].images?.small)!)
+//                        }
+//                    }
+//                }
+                ForEach(((self.cardData?.data)!), id: \.id) { card in
+                    CardView(cardData: card).environmentObject(userStore)
                 }
+//                ForEach(0..<(cardData?.data!.count)!) { index in
+//                    //add environment variable
+//                    // use cardView here
+//                    CardView(cardData: cardData.data[index])
+////                    SearchResultCard(name: (cardData?.data![index].name)!, imageURL: (cardData?.data![index].images?.large)!)
+//                }
             }
         }
     }
 }
 
 struct SearchResultCard: View {
+    
+    var name: String
+    var imageURL: String
+    
     var body: some View {
         VStack {
-            Image("Venausaur")
-            Text("Name Goes here")
+            ImageViewURL(withURL: imageURL)
+            Text(name)
             HStack {
                 Button(
                     action: {
@@ -58,11 +67,5 @@ struct SearchResultCard: View {
                 )
             }
         }
-    }
-}
-
-struct SearchResultsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SearchResultsView()
     }
 }

@@ -11,14 +11,13 @@ import SwiftUI
 struct CardInfo: View {
     // Replace fillers with commented code after search is done
     
-    //@State var pokemon: Datum
+    @State var pokemon: Datum
     
     var body: some View {
         VStack {
-            Image("Venausaur")
-            /*RemoteImage(url: (pokemon.images?.small)!)*/
+            RemoteImage(url: (pokemon.images?.small)!)
                 .padding(.top)
-            Text("Celebi & Venausaur"/*pokemon.name!*/)
+            Text(pokemon.name!)
                 .font(.custom("Bold", size: 24))
                 .padding()
             VStack {
@@ -28,17 +27,17 @@ struct CardInfo: View {
                     Text("HP")
                         .font(.custom("Bold", size: 18))
                         .foregroundColor(Color.red)
-                    Text("80"/*pokemon.hp!*/)
+                    Text(pokemon.hp!)
                         .font(.custom("Italic", size: 14))
                     }
                     .padding()
                     Divider()
                         .frame(maxHeight: 70)
                     VStack{
-                        Text("Energy")
+                        Text("Super Type")
                             .font(.custom("Bold", size: 18))
                             .foregroundColor(Color.red)
-                        Text("Grass"/*pokemon.energy!*/)
+                        Text(pokemon.supertype!)
                             .font(.custom("Italic", size: 14))
                     }
                     .padding()
@@ -49,7 +48,7 @@ struct CardInfo: View {
                 Group{
                     HStack{
                         VStack(alignment: .leading){
-                    Text("Attacks")
+                   /* Text("Attacks")
                         .font(.custom("Bold", size: 18))
                         .foregroundColor(Color.red)
                         .padding(.top)
@@ -58,14 +57,14 @@ struct CardInfo: View {
                     Text("Solar Beam ...")
                         .font(.custom("Regular", size: 14))
                     Text("Evergreen-GX ...")
-                        .font(.custom("Regular", size: 14))
-                    /*
+                        .font(.custom("Regular", size: 14))*/
+                    
                     ForEach(pokemon.attacks!, id: \.name) { attack in
                      Text(attack.name!).font(.custom("Bold", size: 14))
-                         */
+                         
                         }
                         VStack(alignment: .trailing) {
-                            Text("DMG")
+                            /*Text("DMG")
                                 .font(.custom("Bold", size: 18))
                                 .foregroundColor(Color.red)
                                 .padding(.top)
@@ -74,11 +73,11 @@ struct CardInfo: View {
                             Text("150")
                                 .font(.custom("Bold", size: 14))
                             Text("180")
-                                .font(.custom("Bold", size: 14))
-                            /*
-                            ForEach(pokemon.attacks.damage!, id: \.name) { attack in
-                             Text(attack.name!).font(.custom("Bold", size: 14))
-                                 */
+                                .font(.custom("Bold", size: 14))*/
+                            
+                            ForEach(pokemon.attacks!, id: \.name) { attack in
+                             Text(attack.damage!).font(.custom("Bold", size: 14))
+                                 
                         }
                         
                     }
@@ -90,13 +89,13 @@ struct CardInfo: View {
                         .padding(.top)
                     HStack{
                         VStack{
-                            Text("Market")
+                            /*Text("Market")
                                 .font(.custom("Bold", size: 14))
                             Text("$15.85")
-                                .font(.custom("Italic", size: 14))
-                            /*if pokemon1.tcgplayer?.prices?.holofoil?.market != nil {
+                                .font(.custom("Italic", size: 14))*/
+                            if pokemon.tcgplayer?.prices?.holofoil?.market != nil {
                             Text(String((pokemon.tcgplayer?.prices?.holofoil?.market)!)).font(.custom("Italic", size: 14))
-                        }*/
+                        }
                             
                         
                         }
@@ -107,30 +106,30 @@ struct CardInfo: View {
                             .font(.custom("Bold", size: 14))
                         Text("$15.58")
                             .font(.custom("Italic", size: 14))
-                        /*if pokemon1.tcgplayer?.prices?.holofoil?.market != nil {
+                        /*if pokemon.tcgplayer?.prices?.holofoil?.market != nil {
                             Text(String((pokemon.tcgplayer?.prices?.holofoil?.low)!)).font(.custom("Italic", size: 14))
                         }*/
                         }
                         .padding()
                         
                         VStack{
-                        Text("Mid")
+                            /*Text("Mid")
                             .font(.custom("Bold", size: 14))
                         Text("$24.99")
-                            .font(.custom("Italic", size: 14))
-                        /*if pokemon1.tcgplayer?.prices?.holofoil?.mid != nil {
+                            .font(.custom("Italic", size: 14))*/
+                       if pokemon.tcgplayer?.prices?.holofoil?.mid != nil {
                             Text(String((pokemon.tcgplayer?.prices?.holofoil?.mid)!)).font(.custom("Italic", size: 14))
-                        }*/
+                        }
                         }
                         
                         VStack{
-                        Text("High")
+                            /*Text("High")
                             .font(.custom("Bold", size: 14))
                         Text("$42.95")
-                            .font(.custom("Italic", size: 14))
-                        /*if pokemon1.tcgplayer?.prices?.holofoil?.high != nil {
+                            .font(.custom("Italic", size: 14))*/
+                        if pokemon.tcgplayer?.prices?.holofoil?.high != nil {
                             Text(String((pokemon.tcgplayer?.prices?.holofoil?.high)!)).font(.custom("Italic", size: 14))
-                        }*/
+                        }
                             
                         }
                         .padding()
@@ -139,3 +138,8 @@ struct CardInfo: View {
         }
     }
 }
+}
+}
+
+
+
