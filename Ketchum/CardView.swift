@@ -24,19 +24,28 @@ struct CardView: View {
     
     var body: some View {
         VStack {
-            Button(action: {
-                print("button clicked")
-            }) {
-                VStack {
-                    Text("this is the card view")
-                    if (cardData.id != "") {
-                        RemoteImage(url: (cardData.images?.small)!)
-                        HStack {
-                            Text(cardData.name!).font(.custom("Regular", size: 15))
-                        }
+//            Button(action: {
+//                print("button clicked")
+//            }) {
+//                VStack {
+//                    Text("this is the card view")
+//                    if (cardData.id != "") {
+//                        RemoteImage(url: (cardData.images?.small)!).padding()
+//                        HStack {
+//                            Text(cardData.name!).font(.custom("Regular", size: 15))
+//                        }
+//                    }
+//                }
+//            }
+            VStack {
+                if (cardData.id != "") {
+                    RemoteImage(url: (cardData.images?.small)!).padding()
+                    HStack {
+                        Text(cardData.name!).font(.custom("Regular", size: 15))
                     }
                 }
             }
+            
             HStack {
                 // favorites button
                 if (self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.favorites)) {

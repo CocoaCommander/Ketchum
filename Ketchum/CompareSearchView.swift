@@ -93,21 +93,11 @@ struct CompareSearchView: View {
                 if cardData != nil {
                     List {
                         ForEach((cardData?.data)!, id: \.id) { pokemon in
-                            NavigationLink(
-                                destination: CardView(cardData: pokemon).environmentObject(userStore),
-                                label: {
-                                    Text("View Card")
-                                })
-                            NavigationLink(
-                                destination: FavoritesView().environmentObject(userStore),
-                                label: {
-                                    Text("favorites")
-                                })
-                            NavigationLink(
-                                destination: DeckView().environmentObject(userStore),
-                                label: {
-                                    Text("Deck")
-                                })
+//                            NavigationLink(
+//                                destination: CardView(cardData: pokemon).environmentObject(userStore),
+//                                label: {
+//                                    Text("View Card")
+//                                })
                             Button(action: {
                                 if pokemon1.id == "" && pokemon2.id == "" {
                                     pokemon1 = pokemon
@@ -116,12 +106,13 @@ struct CompareSearchView: View {
                                 }
                                 //Maybe add a alert later
                             }) {
-                                VStack {
-                                    RemoteImage(url: (pokemon.images?.small)!)
-                                    HStack {
-                                        Text(pokemon.name!).font(.custom("Regular", size: 15))
-                                    }
-                                }
+//                                VStack {
+//                                    RemoteImage(url: (pokemon.images?.small)!)
+//                                    HStack {
+//                                        Text(pokemon.name!).font(.custom("Regular", size: 15))
+//                                    }
+//                                }
+                                CardView(cardData: pokemon).environmentObject(userStore)
                             }
                         }
                     }

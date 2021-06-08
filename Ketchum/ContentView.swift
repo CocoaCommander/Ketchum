@@ -30,7 +30,7 @@ struct ContentView: View {
                 //Search cards & search results
                 else if self.index == 2 {
                     // pass home view an environment object
-                    HomeView()
+                    HomeView().environmentObject(userStore)
                 }
                 //Comparing cards
                 else if self.index == 3 {
