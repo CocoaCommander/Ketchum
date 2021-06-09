@@ -40,23 +40,35 @@ struct CompareComponent: View {
     
     @Binding var pokemon1 : Datum
     
+    @ViewBuilder
     var body: some View {
         VStack {
-            Text(pokemon1.name!).font(.custom("Bold", size: 20))
+            Text(pokemon1.name!)
+                .font(.custom("Bold", size: 20))
+                .lineLimit(1)
+                .allowsTightening(true)
             RemoteImage(url: (pokemon1.images?.small)!).aspectRatio(contentMode: .fit)
             HStack(alignment: .firstTextBaseline) {
                 Text("Attacks: ")
                     .font(.custom("Bold", size: 15))
                     .lineLimit(1)
                     .allowsTightening(true)
-                VStack {
-                    ForEach(pokemon1.attacks!, id: \.name) { attack in
-                        Text(attack.name!)
-                            .font(.custom("Regular", size: 15))
-                            .lineLimit(1)
-                            .allowsTightening(true)
+                if pokemon1.supertype == "Pokémon" {
+                    VStack {
+                        ForEach(pokemon1.attacks!, id: \.name) { attack in
+                            Text(attack.name!)
+                                .font(.custom("Regular", size: 15))
+                                .lineLimit(1)
+                                .allowsTightening(true)
+                        }
                     }
+                } else {
+                    Text("No attacks")
+                        .font(.custom("Regular", size: 15))
+                        .lineLimit(1)
+                        .allowsTightening(true)
                 }
+                
             }
             Divider()
             HStack(alignment: .firstTextBaseline) {
@@ -75,10 +87,18 @@ struct CompareComponent: View {
                     .font(.custom("Bold", size: 15))
                     .lineLimit(1)
                     .allowsTightening(true)
-                Text(pokemon1.hp!)
-                    .font(.custom("Regular", size: 15))
-                    .lineLimit(1)
-                    .allowsTightening(true)
+                if pokemon1.supertype == "Pokémon" {
+                    Text(pokemon1.hp!)
+                        .font(.custom("Regular", size: 15))
+                        .lineLimit(1)
+                        .allowsTightening(true)
+                } else {
+                    Text("No HP")
+                        .font(.custom("Regular", size: 15))
+                        .lineLimit(1)
+                        .allowsTightening(true)
+                }
+                
             }
             Divider()
             HStack(alignment: .firstTextBaseline) {
