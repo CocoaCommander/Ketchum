@@ -6,12 +6,14 @@
 //
 
 import SwiftUI
+import Network
 
 struct HomeView: View {
     
     @State var loadError: String = ""
     @State var cardDataSearch: CardDataModel? = nil
     @EnvironmentObject var userStore: UserStorage
+    @State var showError: Bool = false
 
     @ViewBuilder
     var body: some View {
@@ -45,6 +47,9 @@ struct SearchBar: View {
     var baseURL = "https://api.pokemontcg.io/v2/cards"
     @Binding var loadError: String
     @Binding var cardData: CardDataModel?
+    @State var showError: Bool = false
+    
+    var monitor = NWPathMonitor()
 
     
     func loadData(searchTerm: String) -> Void {
@@ -64,8 +69,10 @@ struct SearchBar: View {
             if let data = data {
                 do {
                     let decodedResponse = try JSONDecoder().decode(CardDataModel.self, from: data)
+                    
                     DispatchQueue.main.async {
                         self.cardData = decodedResponse
+                        UserDefaults.standard.set(data, forKey: "cardData")
                         group.leave()
                     }
                     //semaphore.signal()
@@ -123,6 +130,39 @@ struct SearchBar: View {
                 .stroke(Color.black, lineWidth: 1)
         )
         .padding()
+        .onAppear {
+            if let data = UserDefaults.standard.data(forKey: "cardData") {
+                do {
+                    // Create JSON Decoder
+                    let decoder = JSONDecoder()
+
+                    // Decode Note
+                    self.cardData = try decoder.decode(CardDataModel.self, from: data)
+
+                } catch {
+                    print("Unable to Decode quizData (\(error))")
+                }
+            }
+            monitor.pathUpdateHandler = { path in
+                if path.status == .satisfied {
+                    return
+                } else {
+                    self.loadError = "No internet connection."
+                }
+            }
+            let queue = DispatchQueue(label: "Monitor")
+            monitor.start(queue: queue)
+            
+            if self.loadError != "" {
+                self.showError = !self.showError
+            }
+        }
+        .alert(isPresented: $showError) {
+            Alert(
+                title: Text("Error"),
+                message: Text("Not connected to the network")
+            )
+        }
     }
 }
 
