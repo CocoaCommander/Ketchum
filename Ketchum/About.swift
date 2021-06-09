@@ -20,7 +20,6 @@ struct About: View {
                     .frame(width: CGFloat(50), height: CGFloat(50))
                 Text("Ketchum")
                     .font(.custom("Bold", size: 30))
-                    .fontWeight(.medium)
             }
                 ZStack {
                     Image("border")

@@ -10,7 +10,7 @@ import SwiftUI
 private var emptyPokemon : Datum = Datum.init(id: "", name: "Select a Pokemon!", supertype: "", subtypes: [], hp: "", types: [], evolvesFrom: "", rules: [], attacks: [], weaknesses: [], retreatCost: [], convertedRetreatCost: 0, datumSet: Set.init(id: "", name: "", series: "", printedTotal: 0, total: 0, legalities: Legalities.init(unlimited: Expanded.init(rawValue: ""), standard: Expanded.init(rawValue: ""), expanded: Expanded.init(rawValue: "")), ptcgoCode: "", releaseDate: "", updatedAt: "", images: SetImages.init(symbol: "", logo: "")), number: "", artist: "", rarity: "", nationalPokedexNumbers: [], legalities: Legalities.init(unlimited: Expanded.init(rawValue: ""), standard: Expanded.init(rawValue: ""), expanded: Expanded.init(rawValue: "")), images: DatumImages.init(small: "", large: ""), tcgplayer: Tcgplayer.init(url: "", updatedAt: "", prices: Prices.init(holofoil: Holofoil.init(low: 0.0, mid: 0.0, high: 0.0, market: 0.0, directLow: 0.0))), resistances: [])
 
 struct CardView: View {
-    var cardData: Datum
+    @State var cardData: Datum
     @EnvironmentObject var userStore: UserStorage
     @State var showMessage = false
     @State var message: String = " "
@@ -37,17 +37,20 @@ struct CardView: View {
 //                    }
 //                }
 //            }
-            VStack {
-                if (cardData.id != "") {
-//                    Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
-
-                    RemoteImage(url: (cardData.images?.small)!).padding()
-                    HStack {
-                        Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
-                    }
-                }
-            }
+//                VStack {
+//                    if (cardData.id != "") {
+//    //                    Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
+//
+//
+//                        RemoteImage(url: (cardData.images?.small)!)
+//                            .padding()
+//                        HStack {
+//                            Text(cardData.name!).fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)
+//                        }
+//                    }
+//                }
             
+            CompareComponent(pokemon1: $cardData)
             HStack {
                 // favorites button
                 if (self.userStore.isInCollection(checkedCard: cardData, collectionToCheck: self.userStore.favorites)) {

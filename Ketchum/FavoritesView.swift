@@ -20,7 +20,6 @@ struct FavoritesView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: CGFloat(50), height: CGFloat(50))
                     Text("My Favorited Pokemon").font(.custom("Bold", size: 30))
-                        .fontWeight(.medium)
                 }
                 ForEach((self.userStore.favorites), id: \.id) { favorite in
                     CardView(cardData: favorite).environmentObject(userStore)

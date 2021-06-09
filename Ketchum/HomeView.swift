@@ -24,7 +24,6 @@ struct HomeView: View {
                     .frame(width: CGFloat(100), height: CGFloat(100))
                 Text("Ketchum")
                     .font(.custom("Bold", size: 30))
-                    .fontWeight(.medium)
             }
             SearchBar(loadError: $loadError, cardData: $cardDataSearch)
             Text("try searching pikachu!")
@@ -87,7 +86,7 @@ struct SearchBar: View {
         //_ = semaphore.wait(wallTimeout: .distantFuture)
         
         group.notify(queue: .main) {
-            print("Received: \(cardData?.data?[0].images?.small ?? "load failed")")
+            
         }
 
         return

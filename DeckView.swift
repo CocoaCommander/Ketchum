@@ -20,7 +20,7 @@ struct DeckView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: CGFloat(50), height: CGFloat(50))
                     Text("My Deck").font(.custom("Bold", size: 30))
-                        .fontWeight(.medium)
+                       
                     
                 }
                 Text(String(userStore.deck.count) + " / 60 cards").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/).font(.title2)

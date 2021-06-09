@@ -12,9 +12,10 @@ struct SearchResultsView: View {
     @Binding var cardData: CardDataModel?
     @EnvironmentObject var userStore: UserStorage
 
+    @ViewBuilder
     var body: some View {
-        VStack {
-            ScrollView(.vertical) {
+        ScrollView(.vertical) {
+            VStack {
                 
 //                This code fails on odd numbered results
 //                let columnCount: Int = 2
@@ -27,8 +28,14 @@ struct SearchResultsView: View {
 //                        }
 //                    }
 //                }
-                ForEach(((self.cardData?.data)!), id: \.id) { card in
-                    CardView(cardData: card).environmentObject(userStore)
+                if (self.cardData?.data!.count)! > 0 {
+                    ForEach(((self.cardData?.data)!), id: \.id) { card in
+                        //SearchResultCard(name: card.name!, imageURL: (card.images?.small)!)
+                        CardView(cardData: card)
+                    }
+                } else {
+                    Text("No Cards Found")
+                        .font(.custom("Regular", size: 12))
                 }
 //                ForEach(0..<(cardData?.data!.count)!) { index in
 //                    //add environment variable
