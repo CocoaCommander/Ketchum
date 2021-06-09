@@ -18,6 +18,7 @@ class UserStorage: ObservableObject {
         let numElements = self.favorites.count
         guard let currName = newcard.name else { return " "}
         print(String(self.favorites.count))
+        //UserDefaults.standard.set(favorites, forKey: "favoritesList")
         return("added to favorites, current count = " + String(numElements) + " name " + String(currName))
     }
     
@@ -32,11 +33,13 @@ class UserStorage: ObservableObject {
     
     func removeFavorite(removedCard: Datum, arrayToUpdate: [Datum]) {
         self.favorites = arrayToUpdate.filter { $0.id != removedCard.id }
+        //UserDefaults.standard.set(favorites, forKey: "favoritesList")
         print(String(self.favorites.count))
     }
     
     func removeFromDeck(removedCard: Datum, arrayToUpdate: [Datum]) {
         self.deck = arrayToUpdate.filter { $0.id != removedCard.id }
+        //UserDefaults.standard.set(deck, forKey: "deck")
         print(String(self.deck.count))
     }
     
@@ -44,9 +47,18 @@ class UserStorage: ObservableObject {
     func addToDeck(newcard: Datum) -> String {
         if (deck.count < 60) {
             deck.append(newcard)
+            //UserDefaults.standard.set(deck, forKey: "deck")
             return("Added to Deck")
         }
         print(String(self.deck.count))
         return("Deck already has 60 cards")
+    }
+    
+    func setDeck(_ dataToSet: [Datum]) {
+        deck = dataToSet
+    }
+    
+    func setFavorites(_ dataToSet: [Datum]) {
+        favorites = dataToSet
     }
 }

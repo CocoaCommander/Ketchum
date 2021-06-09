@@ -16,6 +16,7 @@ struct CompareSearchView: View {
     //Inital Datum Objects
     @State private var pokemon1 : Datum = emptyPokemon
     @State private var pokemon2 : Datum = emptyPokemon
+    @State private var twoSelected: Int = 0
     @State private var searchQuery = ""
     @State private var action : Int? = 0
     @State var loadError: String = ""
@@ -51,8 +52,10 @@ struct CompareSearchView: View {
                         if pokemon2.id != "" {
                             pokemon1 = pokemon2
                             pokemon2 = emptyPokemon
+                            twoSelected -= 1
                         } else {
                             pokemon1 = emptyPokemon
+                            twoSelected -= 1
                         }
                     }.padding(.leading, 10)
                     .padding(.trailing, 10)
@@ -64,6 +67,7 @@ struct CompareSearchView: View {
                     Spacer()
                     Text(pokemon2.name!).onTapGesture {
                         pokemon2 = emptyPokemon
+                        twoSelected -= 1
                     }.padding(.leading, 10)
                     .padding(.trailing, 10)
                     .padding(.top, 5)
@@ -78,7 +82,10 @@ struct CompareSearchView: View {
 
                     
                     Text("Compare").onTapGesture {
-                        self.action = 1
+                        if twoSelected == 2 {
+                            self.action = 1
+                        }
+                        
                     }.padding(.leading, 10)
                     .padding(.trailing, 10)
                     .padding(.top, 5)
@@ -101,8 +108,10 @@ struct CompareSearchView: View {
                             Button(action: {
                                 if pokemon1.id == "" && pokemon2.id == "" {
                                     pokemon1 = pokemon
+                                    twoSelected += 1
                                 } else if pokemon1.id != "" && pokemon2.id == "" {
                                     pokemon2 = pokemon
+                                    twoSelected += 1
                                 }
                                 //Maybe add a alert later
                             }) {
